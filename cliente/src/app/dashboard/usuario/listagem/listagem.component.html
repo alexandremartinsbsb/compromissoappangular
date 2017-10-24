@@ -1,0 +1,64 @@
+<!doctype html>
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-xl-12">
+			<h2 class="page-header">Usuário</h2>
+			<ol class="breadcrumb">
+				<li>
+					<i class="fa fa-dashboard"></i>
+					<a href="Javascript:void(0);" [routerLink]="['/dashboard/principal']">Dashboard</a>
+				</li>
+				<li class="active">Listagem de usuário</li>
+			</ol>
+		</div>
+	</div>
+
+	<div *ngFor="let alert of alerts">
+		<alert [type]="alert.type" dismissible="true" dismissOnTimeout="8000">
+			<span [innerHtml]="alert.msg"></span>
+		</alert>
+	</div>
+
+	<div class="tabela table-responsive">
+		<table class="table table-bordered table-hover">
+			<thead class="tabela-cabecalho">
+				<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Login</th>
+					<th>Situação</th>
+					<th class="tabela-cabecalho-coluna-acoes">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let usuario of listaUsuarios">
+					<td>{{usuario.nome}}</td>
+					<td>{{usuario.email}}</td>
+					<td>{{usuario.login}}</td>
+					<td class="tabela-coluna-label">
+						<span [ngClass]="(usuario.situacao == true) ? 'label label-success' : 'label label-danger'">
+							<i [ngClass]="(usuario.situacao == true)?'fa fa-check':'fa fa-ban'" aria-hidden="true"></i>
+							{{ usuario.situacao== true ? 'Ativo' : 'Inativo' }}
+						</span>
+					</td>
+					<td>
+						<a title="Visualizar" type="button" class="btn btn-sm btn-info" [routerLink]="['/dashboard/usuario/cadastro/visualizar', usuario.pk]">
+							<i class="fa fa-search" aria-hidden="true"></i>
+						</a>
+						<a title="Editar" type="button" class="btn btn-sm btn-warning" [routerLink]="['/dashboard/usuario/cadastro/editar', usuario.pk]">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</a>
+						<button title="Excluir" type="button" class="btn btn-sm btn-danger" (click)="openModalWithComponent(usuario)">
+							<i class="fa fa-trash-o" aria-hidden="true"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<a class="btn btn-primary" [routerLink]="['/dashboard/usuario/cadastro/novo']">
+		<i class="fa fa-plus" aria-hidden="true"></i> Cadastrar
+	</a>
+</div>

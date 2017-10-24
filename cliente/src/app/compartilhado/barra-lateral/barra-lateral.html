@@ -1,0 +1,42 @@
+<!doctype html>
+<button class="btn btn-primary" id="toggle-sidebar" type="button" (click)="eventCalled()">&#9776;</button>
+
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+	<ul class="list-group">
+		<a [routerLink]="['/dashboard/principal']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+			<i class="fa fa-fw fa-dashboard"></i>&nbsp;Dashboard
+		</a>
+		<a class="list-group-item">
+			<i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;Relatório
+		</a>
+		<a class="list-group-item">
+			<i class="fa fa-fw fa-table"></i>&nbsp;Agenda
+		</a>
+		<div class="nested-menu">
+			<a class="list-group-item" (click)="addExpandClass('pages')">
+				<span>
+					<i class="fa fa-plus"></i>&nbsp;Cadastro
+				</span>
+			</a>
+			<li class="nested" [ngClass]="{'expand' : showMenu === 'pages' }">
+				<ul class="submenu">
+					<li>
+						<a [routerLink]="['usuario/listagem']" [routerLinkActive]="['router-link-active']" style="text-decoration: none;">
+							<span>
+								<i class="fa fa-user"></i>&nbsp;Usuário
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span>Produto</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</div>
+		<a class="list-group-item">
+			<i class="fa fa-file-o"></i>&nbsp;Integração
+		</a>
+	</ul>
+</nav>

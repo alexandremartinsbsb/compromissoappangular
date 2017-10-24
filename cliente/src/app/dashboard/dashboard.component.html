@@ -1,0 +1,8 @@
+<!doctype html>
+<app-navbar-topo></app-navbar-topo>
+
+<app-barra-lateral-cmp></app-barra-lateral-cmp>
+
+<section class="main-container" [ngClass]="{sidebarPushRight: isActive}">
+	<router-outlet></router-outlet>
+</section>

@@ -1,0 +1,76 @@
+<!doctype html>
+<div class="container-fluid">
+	<!-- Page Heading -->
+	<div class="row">
+		<div class="col-xl-12">
+			<h2 class="page-header">Usuário</h2>
+			<ol class="breadcrumb">
+				<li>
+					<i class="fa fa-dashboard"></i>
+					<a href="Javascript:void(0);" [routerLink]="['/dashboard/principal']">Dashboard</a>
+				</li>
+				<li>
+					<i class="fa fa-user"></i>
+					<a href="Javascript:void(0);" [routerLink]="['/dashboard/usuario/listagem']">Listagem de usuário</a>
+				</li>
+				<li class="active">Cadastro de usuário</li>
+			</ol>
+		</div>
+	</div>
+
+	<div *ngFor="let alert of alerts">
+		<alert [type]="alert.type" dismissible="true" dismissOnTimeout="5000">
+			<span [innerHtml]="alert.msg"></span>
+		</alert>
+	</div>
+
+	<div class="card card-primary card-inverse">
+		<div class="card-header card-primary">Cadastro de Usuário</div>
+		<div class="card-block background-branco">
+			<div class="form-group">
+				<label class="form-control-label" for="pk">#</label>
+				<input [(ngModel)]="usuario.pk" type="text" class="form-control" id="pk" disabled>
+			</div>
+			<div [ngClass]="usuario.nome?.length > 3 ? 'form-group':'form-group has-danger'">
+				<label class="form-control-label" for="nome">Nome</label>
+				<input [(ngModel)]="usuario.nome" type="text" [ngClass]="usuario.nome?.length > 0 ? 'form-control' : 'form-control form-control-danger'"
+				    id="nome" required [disabled]="visualizar">
+			</div>
+			<div [ngClass]="usuario.email?.length > 3 ? 'form-group' : 'form-group has-danger'">
+				<label class="form-control-label" for="situacao">Email</label>
+				<div class="form-group input-group">
+					<span class="input-group-addon">@</span>
+					<input [(ngModel)]="usuario.email" type="email" [ngClass]="usuario.email?.length > 0 ? 'form-control' : 'form-control form-control-danger'"
+					    required [disabled]="visualizar">
+				</div>
+			</div>
+			<div [ngClass]="usuario.login?.length > 3 ? 'form-group' : 'form-group has-danger'">
+				<label class="form-control-label" for="login">Login</label>
+				<input [(ngModel)]="usuario.login" type="text" [ngClass]="usuario.login?.length > 0 ? 'form-control' : 'form-control form-control-danger'"
+				    required id="login" [disabled]="visualizar">
+			</div>
+			<div [ngClass]="usuario.senha?.length > 3 ? 'form-group' : 'form-group has-danger'">
+				<label class="form-control-label" for="senha">Senha</label>
+				<input [(ngModel)]="usuario.senha" type="password" [ngClass]="usuario.senha?.length > 0 ? 'form-control' : 'form-control form-control-danger'"
+				    required id="senha" [disabled]="visualizar">
+			</div>
+			<label class="form-control-label label-ativo-inativo" for="situacao">Situação</label>
+			<div [ngStyle]="styleBtnSituacao" class="btn-group">
+				<label [ngStyle]="styleLabelSituacao" [ngClass]="(usuario.situacao == true)?'btn btn-lg btn-success' : 'btn btn-lg btn-danger'" [(ngModel)]="usuario.situacao"
+				    btnCheckbox id="situacao" [disabled]="visualizar">
+					<i [ngClass]="(usuario.situacao == true)?'fa fa-check' : 'fa fa-ban'" aria-hidden="true"></i>
+					{{ usuario.situacao == true ? 'Ativo' : 'Inativo' }}
+				</label>
+			</div>
+		</div>
+	</div>
+
+	<div class=" pull-right">
+		<a type="button" class="btn btn-warning" [routerLink]="['/dashboard/usuario/listagem']">
+			<i class="fa fa-backward" aria-hidden="true"></i>&nbsp;Voltar
+		</a>
+		<button type="button" class="btn btn-success" (click)="salvarUsuario()" [disabled]="visualizar">
+			<i class="fa fa-check" aria-hidden="true"></i>&nbsp;Salvar
+		</button>
+	</div>
+</div>

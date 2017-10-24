@@ -1,0 +1,147 @@
+<!doctype html>
+<nav class="navbar navbar-dark bg-primary navbar-fixed-top navbar-topo">
+
+	<div class="collapse navbar-toggleable-xs clearfix centralizar-texto">
+		<a class="navbar-brand" [routerLink]="['/dashboard','/home']">
+			CompromissoAPP - Angular
+		</a>
+
+		<ul class="nav navbar-nav top-nav navbar-right pull-xs-right navbar-topo-right">
+			<li class="dropdown nav-item" dropdown>
+				<a class="nav-link dropdown-toggle" href="javascript:;" id="dropdownMenu4" dropdownToggle>
+					<i class="fa fa-envelope"></i>
+					<b class="caret"></b>
+					<span class="sr-only">(current)</span>
+				</a>
+				<ul class="dropdown-menu message-dropdown" aria-labelledby="dropdownMenu4">
+
+					<li class="preview-mensagem">
+						<a href="javascript:;" class="dropdown-item">
+							<div class="media">
+								<span class="media-left">
+									<img class="media-object" src="../../../assets/img/imagem-usuario-alerta.png" alt="" style="height: 50px;">
+								</span>
+								<div class="media-body">
+									<h5 class="media-heading">
+										<strong>Alexandre Martins da Silva</strong>
+									</h5>
+									<p class="small text-muted">
+										<i class="fa fa-clock-o"></i> Ontem as 4:32 PM
+									</p>
+									<p class="last">Usuário cadastrado com sucesso!</p>
+								</div>
+							</div>
+						</a>
+					</li>
+
+					<hr />
+
+					<li class="preview-mensagem">
+						<a href="javascript:;" class="dropdown-item">
+							<div class="media">
+								<span class="media-left">
+									<img class="media-object" src="../../../assets/img/imagem-usuario-alerta.png" alt="" style="height: 50px;">
+								</span>
+								<div class="media-body">
+									<h5 class="media-heading">
+										<strong>Alexandre Martins da Silva</strong>
+									</h5>
+									<p class="small text-muted">
+										<i class="fa fa-clock-o"></i> Ontem as 4:32 PM
+									</p>
+									<p class="last">Usuário cadastrado com sucesso!</p>
+								</div>
+							</div>
+						</a>
+					</li>
+
+					<hr>
+
+					<li class="preview-mensagem">
+						<a href="javascript:;" class="dropdown-item">
+							<div class="media">
+								<span class="media-left">
+									<img class="media-object" src="../../../assets/img/imagem-usuario-alerta.png" alt="" style="height: 50px;">
+								</span>
+								<div class="media-body">
+									<h5 class="media-heading">
+										<strong>Alexandre Martins da Silva</strong>
+									</h5>
+									<p class="small text-muted">
+										<i class="fa fa-clock-o"></i> Ontem as 4:32 PM
+									</p>
+									<p class="last">Usuário cadastrado com sucesso!</p>
+								</div>
+							</div>
+						</a>
+					</li>
+
+					<hr>
+
+					<li class="dropdown-item message-footer">
+						<a href="javascript:;" class="dropdown-item centralizar-texto">Ler todas as mensagens novas</a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown nav-item" dropdown>
+				<a href="javascript:;" id="name2" class="nav-link dropdown-toggle" dropdownToggle>
+					<i class="fa fa-bell"></i>
+					<b class="caret"></b>
+					<span class="sr-only">(current)</span>
+				</a>
+				<ul class="dropdown-menu alert-dropdown" aria-labelledby="name2">
+					<li>
+						<a href="javascript:;" class="dropdown-item">Nome Alerta
+							<span class="label label-default"> Badge Alerta</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="dropdown-item">Nome Alerta
+							<span class="label label-default"> Badge Alerta</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;" class="dropdown-item">Nome Alerta
+							<span class="label label-default"> Badge Alerta</span>
+						</a>
+					</li>
+
+					<li class="dropdown-divider"></li>
+
+					<li>
+						<a href="javascript:;" class="dropdown-item">Visualizar tudo</a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown nav-item" dropdown>
+				<a href="javascript:;" id="single-button" class="nav-link dropdown-toggle" dropdownToggle>
+					<i class="fa fa-user"></i> Alexandre
+					<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu" aria-labelledby="single-button">
+					<li>
+						<a class="dropdown-item" href="javascript:;" [routerLink]="['/dashboard/usuario/listagem']">
+							<i class="fa fa-fw fa-user"></i> Perfil
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="javascript:;">
+							<i class="fa fa-fw fa-envelope"></i> Caixa de entrada
+						</a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="javascript:;">
+							<i class="fa fa-fw fa-gear"></i> Configuração
+						</a>
+					</li>
+					<li class="divider"></li>
+					<li>
+						<a class="dropdown-item" href="javascript:;" [routerLink]="['/']">
+							<i class="fa fa-fw fa-power-off"></i> Sair
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
