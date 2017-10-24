@@ -51,7 +51,7 @@ Abaixo segue o passo a passo do modo de instalação bem simples.
 
 * **Cliente**
 ```python
-    * Primeiramente clone o projeto: `git clone https://github.com/alexandremartinsbsb/compromissoappangularjs.git`.
+    * Primeiramente clone o projeto: `git clone https://github.com/alexandremartinsbsb/compromissoappangular.git`.
     * Abra o `terminal` na raiz da pasta `cliente` e execute o comando `npm install`.
     * Para testar a instalação cliente, com o `terminal` aberto na raiz da pasta `cliente` e execute o comando `ng e2e`.
 ```
