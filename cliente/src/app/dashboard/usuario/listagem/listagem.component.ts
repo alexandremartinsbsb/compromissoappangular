@@ -1,8 +1,9 @@
-import { UsuarioComponent } from './../usuario.component';
-import { Http } from '@angular/http';
 import { Component } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+
+import { UsuarioService } from './../../../compartilhado/servicos/usuario/usuario.service';
+import { UsuarioComponent } from './../usuario.component';
 
 import { ModalComponent } from './../../../compartilhado/modal/modal.component';
 
@@ -13,19 +14,15 @@ import { ModalComponent } from './../../../compartilhado/modal/modal.component';
 export class ListagemComponent {
   public alerts: any = [];
   public listaUsuarios: any = [];
-  private _url = 'http://localhost:8080/compromissoapp-0.0.1-SNAPSHOT/rs/usuarios';
   bsModalRef: BsModalRef;
 
-  constructor(private modalService: BsModalService, private http: Http) {
-    this.http
-      .get(this._url)
-      .map(res => res.json())
+  constructor(private modalService: BsModalService, private usuarioService: UsuarioService) {
+    this.usuarioService
+      .getListaUsuarios()
       .subscribe(
-        usuarios => {
-          this.listaUsuarios = usuarios;
-        },
-        erro => console.log(erro)
-      );
+      usuarios => {
+        this.listaUsuarios = usuarios;
+      });
   }
 
   public openModalWithComponent(usuario: UsuarioComponent) {

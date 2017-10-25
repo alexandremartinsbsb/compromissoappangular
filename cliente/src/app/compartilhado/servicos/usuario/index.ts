@@ -1,4 +1,4 @@
 /**
- * Este arquivo fornece a exportação para o NameListService compartilhado.
+ * Este arquivo fornece a exportação para o UsuarioService compartilhado.
  */
-export * from './name-list.service';
+export * from './usuario.service';

@@ -1,6 +1,6 @@
+import { UsuarioService } from './../servicos/usuario/usuario.service';
 import { UsuarioComponent } from './../../dashboard/usuario/usuario.component';
 import { Component } from '@angular/core';
-import { Http } from '@angular/http';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
 import { ListagemComponent } from './../../dashboard/usuario/listagem/listagem.component';
@@ -12,12 +12,11 @@ import { ListagemComponent } from './../../dashboard/usuario/listagem/listagem.c
 export class ModalComponent {
   public usuario: UsuarioComponent = new UsuarioComponent();
   public listagemComponent: ListagemComponent;
-  private _url = 'http://localhost:8080/compromissoapp-0.0.1-SNAPSHOT/rs/usuarios';
 
-  constructor(public bsModalRef: BsModalRef, private http: Http) {}
+  constructor(public bsModalRef: BsModalRef, private usuarioService: UsuarioService) {}
 
   public excluirUsuario() {
-    this.http.delete(this._url.concat('/').concat(this.usuario.pk)).subscribe(
+    this.usuarioService.excluir(this.usuario.pk).subscribe(
       () => {
         let novosUsuarios = this.listagemComponent.listaUsuarios.slice(0);
         let indice = novosUsuarios.indexOf(this.usuario);

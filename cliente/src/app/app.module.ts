@@ -1,3 +1,4 @@
+import { UsuarioService } from './compartilhado/servicos/usuario/usuario.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -28,7 +29,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     InscricaoModule,
     DashboardModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
