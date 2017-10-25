@@ -1,6 +1,6 @@
 # CompromissoAPP - Angular #
 
-Repositório criado como start para iniciar um projeto, utilizando como principais tecnologias, AngularJS e MongoDB.
+Repositório criado como start para iniciar um projeto, utilizando como principais tecnologias, Angular e MongoDB.
 Este projeto foi escrito com [angular-cli](https://github.com/angular/angular-cli) version 1.0.0.
 
 * Versão 1.0.0
