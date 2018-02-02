@@ -47,6 +47,21 @@
   },
   "defaults": {
     "styleExt": "css",
-    "prefixInterfaces": false
+    "prefixInterfaces": false,
+    "component": {
+      "spec": false
+     },
+    "directive": {
+      "spec": false
+     },
+    "guard": {
+      "spec": false
+     },
+    "pipe": {
+      "spec": false
+     },
+    "service": {
+      "spec": false
+     }
   }
 }
