@@ -63,6 +63,7 @@ Abaixo segue o passo a passo do modo de instalação bem simples.
     * Acesse o `Java Build Path` do projeto e na aba `Libraries` adicone a biblioteca do Wildfly.
 ```
 * [Como fazer](https://i.imgur.com/sjtUnMZ.gif)
+![](sjtUnMZ - Imgur.gif)
 
 * Standalone
 ```python
