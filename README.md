@@ -62,7 +62,7 @@ Abaixo segue o passo a passo do modo de instalação bem simples.
 ```python
     * Acesse o `Java Build Path` do projeto e na aba `Libraries` adicone a biblioteca do Wildfly.
 ```
-* [Como fazer](https://i.imgur.com/sjtUnMZ.gif)
+* Como fazer
 ![](como-fazer-1.gif)
 
 * Standalone
@@ -92,7 +92,8 @@ Abaixo segue o passo a passo do modo de instalação bem simples.
       <response-header name="Access-Control-Max-Age" header-name="Access-Control-Max-Age" header-value="1"/>
     </filters>
 ```
-* [Como fazer](https://i.imgur.com/HxI1xig.gif)
+* Como fazer
+![](como-fazer-2.gif)
 
 ## Build ##
 
